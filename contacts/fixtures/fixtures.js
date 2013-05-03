@@ -1,4 +1,4 @@
-steal('can/util/fixture').then(function() {
+steal('can/util/fixture', function() {
 	var contacts = can.fixture.make(1000, function (i) {
 			var firsts = ["Brian", "Bob", "Ken", "Julia", "Mike", "Deb", "Rory", "Micky"],
 				lasts = ["Jones", "Bonds", "Austin", "Park", "Kim", "Johnson"];

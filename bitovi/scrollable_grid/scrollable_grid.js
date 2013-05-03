@@ -1,31 +1,29 @@
-steal('canui/data/grid',
+steal("canui/data/grid",
 	  "bitovi/create",
-	   "bitovi/style",
-	   "./grid.css")
-	.then(function($){
+	  "./grid.css",
+function(){
 
-can.Control('bitovi.ScrollableGrid',
-/* @Static */
-{
+return can.Control('bitovi.ScrollableGrid',{
 	defaults : {
 		model: null,
 		params: null,
 		// path to EJS of create form
 		create: null
 	}
-},
-/* @Prototype */
-{
+},{
 	init : function(){
 		this.element.append(this.view())
 		var gridOptions = {};
-		$.extend(gridOptions, this.options, {newPageClears: false});
+		$.extend(gridOptions, this.options, { newPageClears: false });
+
 		new can.ui.data.Grid(this.element.find(".cluigrid"), gridOptions);
+
 		new bitovi.Create(this.element.find(".create"), {
 			model: this.options.model,
 			insertInto: this.element.find("tbody"),
 			form: this.options.create
-		})
+		});
+
 		this.element.addClass('ui-widget ui-widget-content ui-corner-all')
 		this.on(this.element.find(".scrollBody")[0], "scroll", "gridscroll")
 	},
@@ -39,6 +37,6 @@ can.Control('bitovi.ScrollableGrid',
 			this.options.params.attr("offset", this.options.params.offset + 50)
 		}
 	}
-})
+});
 
 });
