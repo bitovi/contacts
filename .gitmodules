@@ -1,15 +1,15 @@
-[submodule "can"]
-	path = can
-	url = https://github.com/bitovi/canjs.git
-[submodule "steal"]
-	path = steal
-	url = https://github.com/bitovi/steal.git
 [submodule "jquerypp"]
 	path = jquerypp
 	url = https://github.com/bitovi/jquerypp.git
-[submodule "canui"]
-	path = canui
-	url = https://github.com/bitovi/canui.git
+[submodule "can"]
+	path = can
+	url = git@github.com:bitovi/canjs.git
+[submodule "steal"]
+	path = steal
+	url = git@github.com:bitovi/steal.git
 [submodule "funcunit"]
 	path = funcunit
-	url = https://github.com/bitovi/funcunit.git
+	url = git@github.com:bitovi/funcunit.git
+[submodule "canui"]
+	path = canui
+	url = git@github.com:bitovi/canui.git
