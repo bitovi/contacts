@@ -1,9 +1,9 @@
 steal('can/control/view',
 	  'can/view/ejs',
-	  'jquery/dom/form_params',
-	  'jquery/event/key',
-	  './create.css')
-	.then(function($){
+	  'jquerypp/dom/form_params',
+	  'jquerypp/event/key',
+	  './create.css',
+function(){
 
 /**
  * @class Jupiter.Create

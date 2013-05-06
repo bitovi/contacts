@@ -1,22 +1,27 @@
-steal("canui/data/grid",
+steal("canui/grid",
+	  "canui/incubator/data",
 	  "bitovi/create",
 	  "./grid.css",
 function(){
 
-return can.Control('bitovi.ScrollableGrid',{
+return can.Control('bitovi.ScrollableGrid',
+/* @Static */
+{
 	defaults : {
 		model: null,
 		params: null,
 		// path to EJS of create form
 		create: null
 	}
-},{
+},
+/* @Prototype */
+{
 	init : function(){
 		this.element.append(this.view())
 		var gridOptions = {};
 		$.extend(gridOptions, this.options, { newPageClears: false });
 
-		new can.ui.data.Grid(this.element.find(".cluigrid"), gridOptions);
+		new can.ui.Grid(this.element.find(".cluigrid"), gridOptions);
 
 		new bitovi.Create(this.element.find(".create"), {
 			model: this.options.model,

@@ -1,8 +1,9 @@
 steal('can/util',
 	  'can/control',
+	  'can/construct/proxy',
 	  'bitovi/scrollable_grid', 
 	  'bitovi/create',
-	  'canui/data/list',
+	  'canui/list',
 	  'contacts/models',
 	  './contacts.css',
 function(){
@@ -11,21 +12,21 @@ var ContactsApp = can.Control({
 	init: function(){
 		this.params = new can.ui.Data();
 
-		new can.ui.data.List("#category .list_wrapper", {
+		new can.ui.List("#category .list_wrapper", {
 			model : Contacts.Models.Category,
 			show : "//contacts/views/categoryList.ejs",
 			create: "//contacts/views/categoryCreate.ejs",
 			callback : this.proxy('updateList', Contacts.Models.Category)
 		})
 
-		new can.ui.data.List("#location .list_wrapper", {
+		new can.ui.List("#location .list_wrapper", {
 			model : Contacts.Models.Location,
 			show : "//contacts/views/categoryList",
 			create: "//contacts/views/categoryCreate",
 			callback : this.proxy('updateList', Contacts.Models.Location)
 		})
 
-		new can.ui.data.List("#company .list_wrapper", {
+		new can.ui.List("#company .list_wrapper", {
 			model : Contacts.Models.Company,
 			show : "//contacts/views/companyList",
 			create: "//contacts/views/companyCreate",
@@ -63,7 +64,7 @@ var ContactsApp = can.Control({
 			create: "//contacts/views/contactCreate"
 		})
 
-		$('#contacts').find(".wrapper").can_ui_layout_fill()
+		$('#contacts').find(".wrapper").fills()
 		$("h3").addClass('ui-helper-reset ui-state-active')
 		$(".lists > div").addClass('ui-widget ui-widget-content ui-corner-all')
 	},
