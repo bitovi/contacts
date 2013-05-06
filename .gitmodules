@@ -10,3 +10,6 @@
 [submodule "funcunit"]
 	path = funcunit
 	url = git@github.com:bitovi/funcunit.git
+[submodule "canui"]
+	path = canui
+	url = https://github.com/bitovi/canui
