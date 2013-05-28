@@ -22,7 +22,7 @@ Let's get started!
 
 The application source is hosted by [GitHub](https://github.com/bitovi/contacts). You can download the application on github using the following commands:
 
-	$ git clone https://github.com/jupiterjs/contacts
+    $ git clone https://github.com/jupiterjs/contacts
     $ cd contacts
     $ git submodule update --init
 
@@ -35,6 +35,8 @@ This will run the application in development mode.  If you want to build and run
 then change the script tag in `contacts.html` to be in production mode:
 
 	<script type='text/javascript' src='steal/steal.production.js?contacts'></script>
+	
+Additionally, the app can be found on [Github Pages](http://bitovi.github.io/contacts/) if you do not want to set it up.
 
 ## Folder Structure
 
