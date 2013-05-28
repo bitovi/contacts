@@ -1,0 +1,65 @@
+<div class="row lists">
+	<div id='category' class="col col-lg-4">
+		<h3>
+			Category
+			{{^isEditing 'category'}}<div class='add glyphicon glyphicon-plus'></div>{{/isEditing}}
+		</h3>
+		<ul class='list_wrapper'>
+			{{#categories}}
+				{{>category}}
+			{{/categories}}
+		</ul>
+	</div>
+	<div id='company' class="col col-lg-4">
+		<h3>
+			Company
+			{{^isEditing 'company'}}<div class='add glyphicon glyphicon-plus'></div>{{/isEditing}}
+		</h3>
+		<ul class='list_wrapper'>
+			{{#companies}}
+				{{>company}}
+			{{/companies}}
+		</ul>
+	</div>
+	<div id='location' class="col col-lg-4">
+		<h3>
+			Location
+			{{^isEditing 'location'}}<div class='add glyphicon glyphicon-plus'></div>{{/isEditing}}
+		</h3>
+		<ul class='list_wrapper'>
+			{{#locations}}
+				{{>category}}
+			{{/locations}}
+		</ul>
+	</div>
+</div>
+<div id='contacts'>
+	<h3>
+		Contacts <span class="badge count">{{ total }}</span>
+		{{^isEditing 'contact'}}<div class='add glyphicon glyphicon-plus'></div>{{/isEditing}}
+	</h3>
+	<table class="table table-striped table-bordered" cellspacing="0" cellpadding="0">
+		<thead>
+			<th data-order="last" class="ui-corner-left ui-helper-reset ui-state-default">
+				Name <span class="{{{ orderedBy 'last' }}}"></span>
+			</th>
+			<th data-order="categoryId" class="ui-helper-reset ui-state-default">
+				Category <span class="{{{ orderedBy 'categoryId' }}}"></span>
+			</th>
+			<th data-order="companyId" class="ui-helper-reset ui-state-default">
+				Company <span class="{{{ orderedBy 'companyId' }}}"></span>
+			</th>
+			<th data-order="locationId" class="ui-corner-right ui-helper-reset ui-state-default">
+				Location <span class="{{{ orderedBy 'locationId' }}}"></span>
+			</th>
+		</thead>
+		<tbody>
+			{{#contacts}}
+				{{>contact}}
+			{{/contacts}}
+		</tbody>
+	</table>
+</div>
+{{#isLoading}}
+	<div class="loader"></div>
+{{/isLoading}}

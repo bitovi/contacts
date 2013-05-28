@@ -1,0 +1,12 @@
+{{#isEditing this}}
+	<li {{data 'model'}} class="edited category">
+		<form>
+			<input type='text' {{ value name }} placeholder="Name" />
+		</form>
+	</li>
+{{else}}
+	<li {{data 'model'}} class="{{#isActiveFilter this}}active{{/isActiveFilter}} editable category">
+		<span class="edit glyphicon glyphicon-pencil"></span>
+		<a href='{{ filterUrl this }}'>{{ name }}</a>
+	</li>
+{{/isEditing}}

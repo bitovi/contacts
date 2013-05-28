@@ -1,0 +1,48 @@
+{{#isEditing this}}
+	<tr class="edited contact" {{ data 'model' }}>
+		<td colspan='4'>
+			<form class='form-inline'>
+				<div class="col col-lg-2">
+					<input type='text' {{ value first }} placeholder="First" />
+				</div>
+				<div class="col col-lg-2">
+					<input type='text' {{ value last }} placeholder="Last" />
+				</div>
+				<div class="col col-lg-2">
+					<select {{ value categoryId }}>
+						<option value="">Select category</option>
+						{{#categories}}
+							<option value="{{id}}">{{name}}</option>
+						{{/categories}}
+					</select>
+				</div>
+				<div class="col col-lg-2">
+					<select {{ value companyId }}>
+						<option value="">Select category</option>
+						{{#companies}}
+							<option value="{{id}}">{{name}}</option>
+						{{/companies}}
+					</select>
+				</div>
+				<div class="col col-lg-2">
+					<select {{ value locationId }}>
+						<option value="">Select location</option>
+						{{#locations}}
+							<option value="{{id}}">{{name}}</option>
+						{{/locations}}
+					</select>
+				</div>
+				<div class="col col-lg-2">
+					<input type="submit" value="Save" class="btn btn-primary">
+				</div>
+			</form>
+		</td>
+	</tr>
+{{else}}
+	<tr {{ data 'model' }} class="editable contact">
+		<td>{{ name }}</td>
+		<td class="category">{{ related 'category' }}</td>
+		<td class="company">{{ related 'company' }}</td>
+		<td class="location">{{ related 'location' }}</td>
+	</tr>
+{{/isEditing}}

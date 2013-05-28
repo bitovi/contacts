@@ -1,0 +1,13 @@
+{{#isEditing this}}
+	<li {{data 'model'}} class="edited company">
+		<form action="">
+			<input type='text' {{value name}} placeholder="Name" />
+			<input type='text' {{value url}} placeholder="URL" />
+		</form>
+	</li>
+{{else}}
+	<li {{data 'model'}} class="{{#isActiveFilter this}}active{{/isActiveFilter}} editable company">
+		<span class="edit glyphicon glyphicon-pencil"></span>
+		<a href='{{ filterUrl this }}'>{{ name }}</a> <a href='{{ url }}'>&#0187;</a>
+	</li>
+{{/isEditing}}
