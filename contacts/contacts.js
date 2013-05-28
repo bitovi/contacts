@@ -248,7 +248,7 @@ var ContactsApp = Control({
 		}
 		
 		this.total(data.count);
-		this.element.find('#contacts').trigger('resize');
+		this.element.find('#contact').trigger('resize');
 		this.isLoading(false);
 	},
 

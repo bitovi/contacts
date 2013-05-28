@@ -28,6 +28,14 @@ The application source is hosted by [GitHub](https://github.com/bitovi/contacts)
 
 To run the application, open _contacts.html_ with your browser.  We will be using [can.fixture fixtures] to simulate the AJAX requests so running it from a server isn’t necessary.
 
+This will run the application in development mode.  If you want to build and run the application in production, in the command line run:
+
+	$ ./js contacts/scripts/build.js
+
+then change the script tag in `contacts.html` to be in production mode:
+
+	<script type='text/javascript' src='steal/steal.production.js?contacts'></script>
+
 ## Folder Structure
 
 The application resides in the `contacts` folder.  Steal, CanJS, and CanUI folders sit perpendicular to this for reuse in other projects.  The directory structure should mirror below.
