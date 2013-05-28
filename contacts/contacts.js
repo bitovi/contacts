@@ -14,6 +14,11 @@ steal('can/control',
 function(Control, Observe, Form, Models,
          initView, categoryItemView, companyItemView, contactView){
 
+// Don't execute the code
+if(steal.isRhino){
+	return;
+}
+
 // Private member variables
 var loadingCounter = 0,
 	UrlParams = function(){
