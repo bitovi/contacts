@@ -1,6 +1,3 @@
-@page contacts Contacts 
-@parent examples 3
-
 Contacts
 ====
 
